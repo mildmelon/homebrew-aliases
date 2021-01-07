@@ -6,7 +6,7 @@ module Homebrew
     # overriden by the XDG_CONFIG_HOME environment variable. Unfortunately
     # Homebrew strictly filters environment variables in BuildEnvironment.
     BASE_DIR = begin
-      Pathname.new("~/.config/brew-aliases").realpath
+      Pathname.new("~/.config/brew-aliases").expand_path
     rescue
       Pathname.new("~/.brew-aliases").expand_path
     end.freeze
